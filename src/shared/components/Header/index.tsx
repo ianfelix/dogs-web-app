@@ -1,11 +1,3 @@
-import { Container } from './styles';
+import { Presentational } from './Presentational';
 
-const Header = () => {
-  return (
-    <Container>
-      <h1>Header</h1>
-    </Container>
-  );
-};
-
-export default Header;
+export default Presentational;
