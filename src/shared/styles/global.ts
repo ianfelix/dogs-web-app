@@ -9,6 +9,7 @@ export default createGlobalStyle`
   }
 
   body {
+    padding-top: 4rem;
     color: #333;
     font-family: ${typography.first}
   }
@@ -26,6 +27,10 @@ export default createGlobalStyle`
   img {
     display: block;
     max-width: 100%;
+  }
+
+  a {
+    text-decoration: none;
   }
 
   button, input {
