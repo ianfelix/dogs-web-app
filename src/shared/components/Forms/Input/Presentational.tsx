@@ -1,9 +1,11 @@
+import { inputProps } from './types';
 import { Container } from './styles';
 
-export const Presentational = () => {
+export const Presentational = ({ label, type, name }: inputProps) => {
   return (
     <Container>
-      <input type='text' />
+      <label htmlFor={name}>{label}</label>
+      <input name={name} id={name} type={type} />
     </Container>
   );
 };

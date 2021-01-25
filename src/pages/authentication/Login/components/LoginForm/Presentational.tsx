@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom';
 import { Container } from './styles';
 import { LoginFormProps } from './types';
+import Input from '../../../../../shared/components/Forms/Input';
+import Button from '../../../../../shared/components/Forms/Button';
 
 export const Presentational = (props: LoginFormProps) => {
   const {
@@ -15,9 +17,9 @@ export const Presentational = (props: LoginFormProps) => {
     <Container>
       <h1>Login</h1>
       <form action='' onSubmit={handleSubmit}>
-        <input type='text' value={username} onChange={handleChangeUsername} />
-        <input type='text' value={password} onChange={handleChangePassword} />
-        <button>Entrar</button>
+        <Input label='Usuário' type='text' name='username' />
+        <Input label='Senha' type='password' name='password' />
+        <Button>Enviar</Button>
       </form>
 
       <Link to='/login/criar'>Cadastro</Link>

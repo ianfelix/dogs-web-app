@@ -1,9 +1,8 @@
-import { Container } from './styles';
+import { ButtonProps } from './types';
+import * as S from './styles';
 
-export const Presentational = () => {
-  return (
-    <Container>
-      <button>Enviar</button>
-    </Container>
-  );
-};
+export const Presentational = ({ children, ...props }: ButtonProps) => (
+  <S.Container>
+    <S.Button {...props}>{children}</S.Button>
+  </S.Container>
+);
