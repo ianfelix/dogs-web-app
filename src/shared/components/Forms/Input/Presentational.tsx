@@ -6,6 +6,7 @@ export const Presentational = ({ label, type, name }: inputProps) => {
     <Container>
       <label htmlFor={name}>{label}</label>
       <input name={name} id={name} type={type} />
+      <p>Error</p>
     </Container>
   );
 };
