@@ -1,28 +1,32 @@
-import { useState } from 'react';
+import { FormEvent, useState } from 'react';
 import { LoginService } from '../../../../../services/authentication/LoginService';
 import { Presentational } from './Presentational';
+import { formValuesProps } from './types';
 
 const LoginForm = () => {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
+  const [formValues, setFormValues] = useState<formValuesProps>({});
 
-  const handleChangeUsername = (event: any) => setUsername(event.target.value);
-  const handleChangePassword = (event: any) => setPassword(event.target.value);
-  const handleSubmit = (event: any) => {
+  const handleInputChange = (event: FormEvent<HTMLInputElement>) => {
+    const { name, value } = event.currentTarget;
+    setFormValues({ ...formValues, [name]: value });
+    console.log('***', formValues);
+  };
+
+  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    // const formData = new FormData(event.currentTarget);
+    // const data = Object.fromEntries(formData);
+
     //req LoginService
-    LoginService.post('jwt-auth/v1/token', {
-      username,
-      password,
-    }).then((response) => console.log(response.data));
+    LoginService.post('jwt-auth/v1/token', {}).then((response) =>
+      console.log(response.data),
+    );
   };
 
   return (
     <Presentational
-      username={username}
-      password={password}
-      handleChangeUsername={handleChangeUsername}
-      handleChangePassword={handleChangePassword}
+      formValues={formValues}
+      handleInputChange={handleInputChange}
       handleSubmit={handleSubmit}
     />
   );
