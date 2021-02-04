@@ -15,14 +15,14 @@ export const Presentational = (props: LoginFormProps) => {
           label='Usuário'
           type='text'
           name='username'
-          formValues={formValues.username}
+          formValues={formValues.username || ''}
           handleInputChange={handleInputChange}
         />
         <Input
           label='Senha'
           type='password'
           name='password'
-          formValues={formValues.password}
+          formValues={formValues.password || ''}
           handleInputChange={handleInputChange}
         />
         <Button>Enviar</Button>

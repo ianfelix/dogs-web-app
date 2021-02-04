@@ -7,4 +7,4 @@ export const Presentational = () => {
       <Outlet />
     </Container>
   );
-};
+}

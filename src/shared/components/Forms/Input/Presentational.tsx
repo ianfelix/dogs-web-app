@@ -4,8 +4,6 @@ import { inputProps } from './types';
 export const Presentational = (props: inputProps) => {
   const { label, type, name, formValues, handleInputChange } = props;
 
-  console.log(formValues);
-
   return (
     <Container>
       <label htmlFor={name}>{label}</label>
