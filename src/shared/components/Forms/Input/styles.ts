@@ -28,10 +28,4 @@ export const Container = styled.div`
     line-height: 1;
     padding-bottom: 0.5rem;
   }
-
-  p {
-    color: #f31;
-    font-size: 0.875rem;
-    margin-top: 0.25rem;
-  }
 `;

@@ -5,11 +5,12 @@ import { Container } from './styles';
 import { LoginFormProps } from './types';
 
 export const Presentational = (props: LoginFormProps) => {
-  const { handleInputChange, handleSubmit, formValues } = props;
+  const { handleInputChange, handleSubmit, formValues, errorMessages } = props;
 
   return (
     <Container>
       <h1>Login</h1>
+
       <form action='' onSubmit={handleSubmit}>
         <Input
           label='Usuário'
@@ -17,14 +18,18 @@ export const Presentational = (props: LoginFormProps) => {
           name='username'
           formValues={formValues.username || ''}
           handleInputChange={handleInputChange}
+          errorMessages={errorMessages}
         />
+        <span>{errorMessages.username}</span>
         <Input
           label='Senha'
           type='password'
           name='password'
           formValues={formValues.password || ''}
           handleInputChange={handleInputChange}
+          errorMessages={errorMessages}
         />
+        <span>{errorMessages.password}</span>
         <Button>Enviar</Button>
       </form>
 

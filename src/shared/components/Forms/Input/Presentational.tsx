@@ -14,7 +14,6 @@ export const Presentational = (props: inputProps) => {
         onChange={handleInputChange}
         value={formValues}
       />
-      <p>Error</p>
     </Container>
   );
 };

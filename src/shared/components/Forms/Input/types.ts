@@ -6,4 +6,7 @@ export type inputProps = {
   name: string;
   formValues: string;
   handleInputChange: (event: FormEvent<HTMLInputElement>) => void;
+  errorMessages: {
+    [key: string]: string;
+  };
 };
